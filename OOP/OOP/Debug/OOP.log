@@ -1,0 +1,3 @@
+﻿  OOP.cpp
+OOP.obj : error LNK2019: unresolved external symbol "public: void __thiscall HocSinh::xuat(void)" (?xuat@HocSinh@@QAEXXZ) referenced in function _main
+D:\Baitap\Baitap1\OOP\OOP\Debug\OOP.exe : fatal error LNK1120: 1 unresolved externals
