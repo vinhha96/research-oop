@@ -1,55 +1,44 @@
-// OOP1.cpp : This file contains the 'main' function. Program execution begins and ends there.
-//
 
 #include "pch.h"
 #include <iostream>
 #include <string>
 
 using namespace std;
-
-class PhanSo {
+class HocSinh {
 private:
-	int TuSo, MauSo;
+	string Hoten, Diachi;
+	float Diemtoan, Diemvan;
+	
 public:
-	PhanSo RutGon();
-	void Nhap();
+	
+	void Nhap() {
+		fflush(stdin);
+		cout << "nhap ten cua hoc sinh: " << endl;
+		getline(cin, Hoten);
+		fflush(stdin);
+		cout << "nhap dia chi: " << endl;
+		getline(cin, Diachi);
+		cout << "nhap diem toan: " << endl;
+		cin >> Diemtoan;
+		cout << "nhap diem van: " << endl;
+		cin >> Diemvan;
+
+	}
 	void Xuat();
 };
-void PhanSo::Nhap() {
-	cout << "Nhap tu so: ";
-	cin >> this->TuSo;
-
-	cout << "Nhap mau so: ";
-	cin >> this->MauSo;
-
+void HocSinh::Xuat() {
+	cout << "Ho ten: " << Hoten;
+	cout << "Dia chi: " << Diachi;
+	cout << "Diem Toan: " << Diemtoan;
+	cout << "Diem Van: " << Diemvan;
 }
-
-void PhanSo::Xuat() {
-	cout << this->TuSo << "/" << this->MauSo;
-}
-PhanSo PhanSo::RutGon() {
-	int a, b;
-	a = abs(this->TuSo);
-	b = abs(this->MauSo);
-	while (a != b) {
-		if (a > b) {
-			a -= b;
-		}
-		else
-			b -= a;
-	}
-	this->TuSo /= a;
-	this->MauSo /= b;
-	return *this;
-
-}
-
 int main(int argc, const char * argv[]) {
-	PhanSo ps;
-	ps.Nhap();
-	ps.RutGon();
-	ps.Xuat();
+
+	HocSinh hs;
+	hs.Nhap();
+	hs.Xuat();
 	system("exit");
 	return 0;
+}
 }
 
